@@ -76,7 +76,7 @@ let TatakiModel = class {
                 }else if(tatakiSettings.deviceKinds == 'FireHD10'){
                     kinds_arr = [0, 0, 1];
                 }else{
-                    kinds_arr = [1, 0, 0];
+                    kinds_arr = [1, 1, 0];
                 }
 
                 let wavefome_tf    = tf.tensor([array]);
