@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>叩きライブラリ</title>
+</head>
+<body>
+    <h1>top page</h1>
+    <p><a href="/calibration">キャリブレーション</a></p>
+<script>
+window.addEventListener('message', (e)=>{
+const command = e.data;  // 送信元からのデータ(要求)を受け取る
+
+    // 送信元の要求に従って処理
+    switch(command){
+        case 'GET':
+            // WebStorage内のデータ読み込み
+            const buff = localStorage.getItem('tatakiThreshold');
+            const buff2 = localStorage.getItem('deviceKinds');
+
+            let data = {
+                "tatakiThreshold": buff,
+                "deviceKinds": buff2
+            }
+
+            // const json = JSON.parse(buff)
+            const json = JSON.parse(JSON.stringify(data));
+
+            // 送信元へデータを返却
+            e.source.postMessage({status:true, cmd:'GET', body:json}, e.origin);
+            break;
+
+        case 'DELETE':
+            // WebStorage内のデータ削除
+            localStorage.removeItem('tatakiThreshold');
+            localStorage.removeItem('deviceKinds');
+
+            // 送信元へ結果を返却
+            e.source.postMessage({status:true, cmd:'DELETE'}, e.origin);
+            break;
+
+        default:
+            e.source.postMessage({status:false, cmd:command, error:'Unknown Command'}, e.origin);
+            break;        
+    }
+})
+</script>
+</body>
+</html>
+
