@@ -1,0 +1,73 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>データ収集</title>
+		<!-- <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" /> -->
+    <meta name="viewport" content="width=device-width" />
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.1.0/dist/tf.min.js"></script>
+    <!-- <script src="static/js/collect.js"></script> -->
+    <script src="static/js/tataki.js"></script>
+  </head>
+	<body>
+  <div id="tataki"></div>
+
+  <p id="interval">0</p>
+  <p id="period">0</p>
+
+  <br>
+
+  <select id="kindsSumaho" style="height: 10%; width: 50%; font-size: 1rem;">
+    <option value='default'  hidden>選択してください</option>
+
+    <option value="SE3">SE3</option>
+    <option value="Nexus9">Nexus9</option>
+    <option value="FireHD10">FireHD10</option>
+  </select>
+
+  <br>
+  <br>
+
+  <select id="kindsTataki" style="height: 10%; width: 50%; font-size: 1rem;">
+    <option value='default'  hidden>選択してください</option>
+
+    <option value="tatakiTopRight">縦　右上</option>
+    <option value="tatakiBottomRight">縦　右下</option>
+    <option value="tatakiTopLeft">縦　左上</option>
+    <option value="tatakiBottomLeft">縦　左下</option>
+    <option value="tatakiMisDetectioin">縦　ミス</option>
+
+    <option value="tatakiHorizontallyRight-leftHead">横(頭が左)　右上</option>
+    <option value="tatakiHorizontallyLeft-leftHead">横(頭が左)　左上</option>
+    <option value="tatakiHorizontallyMisDetectioin-leftHead">横(頭が左)　ミス</option>
+
+    <option value="tatakiHorizontallyRight-rightHead">横(頭が右)　右上</option>
+    <option value="tatakiHorizontallyLeft-rightHead">横(頭が右)　左上</option>
+    <option value="tatakiHorizontallyMisDetectioin-rightHead">横横(頭が右)　ミス</option>
+    
+  </select>
+
+
+
+
+
+
+
+
+
+  <br>
+  <br>
+
+  <p id="num" style="font-size: 3rem;">0</p>
+
+	<script type="module">
+	import * as CANNON from '../static/js/cannon-es.mjs'
+	import * as THREE from'https://unpkg.com/three@0.126.1/build/three.module.js';
+	import { OrbitControls } from 'https://unpkg.com/three@0.126.1/examples/jsm/controls/OrbitControls.js';
+	import { GLTFLoader } from 'https://unpkg.com/three@0.126.1/examples/jsm/loaders/GLTFLoader.js';
+
+  </script>
+  </body>
+</html>
