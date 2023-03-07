@@ -1,8 +1,8 @@
 let tatakiSettings = {};
 // デフォルトの閾値
-tatakiSettings.defaultTatakiThreshold = 1.5;
+tatakiSettings.defaultTatakiThreshold = 3;
 // ユーザがキャリブレーションした閾値
-tatakiSettings.tatakiThreshold = 1.5;
+tatakiSettings.tatakiThreshold = 3;
 // 閾値の前の時間
 tatakiSettings.beforeThresholdTimeRange = 200; // 0.2秒
 // 閾値の後の時間
