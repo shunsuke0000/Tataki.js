@@ -4,3 +4,5 @@
 
 
 Tataki.js/sample/static/js/tataki.js がメインのファイルになります。
+
+名前をTataki.jsからtapping.jsに変更します。変更後のリポジトリは、https://github.com/shunsuke0000/tappig.js です。
